@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "SwarmCore",
+    "name": "SwarmCore",
+    "symbol": "SWARMCORE",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8000,
+    "initialMarketCapWei": "3500000000000000000000",
+    "remainderTo": "0xd6fac924dcda60610764cc645dbd3939fc18e1a3"
+  },
+  "notes": "SwarmCore (SWARMCORE) is a fixed-supply ERC-20 with 18 decimals. Its constructor takes no arguments and mints the whole supply of 1,000,000,000 tokens (1000000000000000000000000000 minor units) once to msg.sender, which is the factory at launch; nothing can mint afterwards. The token has no owner, no pause, no blocklist, no freeze, no burn and no fee or tax on transfer, so every transfer moves exactly the amount asked for: the swarm's share arrives at the MerkleDistributor whole, claims leave it whole, the pool seed and swaps through the Uniswap v4 PoolManager move exactly what they say, and the remainder reaches economics.remainderTo whole. Because it applies no transfer rules it needs no exemptions and does not take $factory, $poolManager or $launchNumber. There are no application contracts and no initialization calls. The pool pairs with IMD; pool.initialPrice is provenance only and the deployer derives the opening price from economics.initialMarketCapWei and totalSupply."
+}
